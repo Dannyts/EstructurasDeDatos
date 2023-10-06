@@ -11,7 +11,7 @@ SOURCE:= ${TOPDIR}/source
 # Flags
 CFLAGS:= -I $(INCLUDE)
 
-_DEPS:= list.h
+_DEPS:= dlist.h
 DEPS:= $(patsubst %,$(INCLUDE)/%,$(_DEPS))
 
 _MAIN:= ex1_dlist.c
