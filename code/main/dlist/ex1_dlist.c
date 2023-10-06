@@ -6,14 +6,14 @@
 /*
 	Print list
 */
-static void print_dlist (constList *DList) {
+static void print_dlist (const DList *dlist) {
 	DListNode *node;
 	int *data, i;
 	//Imprime el tamaño de la lista
-	fprintf(stdout, "List size is %d\n", dlist_size(list));
+	fprintf(stdout, "List size is %d\n", dlist_size(dlist));
 
 	i = 0;
-	node=dlist_head(list);
+	node=dlist_head(dlist);
 
 	while (1) {
 		data = dlist_data(node);
@@ -36,7 +36,7 @@ int main (int argc, char **argv){
 	DList dlist;
 	DListNode *node;
 
-	int *dat, i;
+	int *data, i;
 
 	//Incializando la lista doble mente ligada
 	dlist_init (&dlist, free);
@@ -59,5 +59,16 @@ int main (int argc, char **argv){
 	//iniciando a navegar por la lista doblemente ligada
 	node= dlist_head(&dlist);
 
-	for 
+	for (i - 0; i<7; ++i)
+		node =dlist_next(node);
+
+	data = dlist_data(node);
+	//fprintf (stdout)
+
+
+
+
+	// Destruyendo la lista doblemente ligada
+    fprintf(stdout, "\nDestroying the list\n");
+    dlist_destroy(&dlist);
 }
