@@ -15,7 +15,7 @@ static void print_list (const List *list) {
 
     i = 0;
     node = list_head(list);
-
+/*
     while (1) {
         data = list_data(node);
         // Print the node, data, the pointer of node and the pointer to the next node
@@ -28,7 +28,7 @@ static void print_list (const List *list) {
             break;
         else
             node = list_next(node);
-    }
+    }*/
 
    return;
 }
@@ -60,7 +60,7 @@ int main (int argc, char **argv) {
 
     print_list(&list);
 
-    // Start to travel the list
+  /*  // Start to travel the list
     node = list_head(&list);
 
     for (i = 0; i < 7; ++i) 
@@ -124,7 +124,7 @@ int main (int argc, char **argv) {
     fprintf(stdout, "Testing list_is_tail... value=%d (1=OK)\n", i);
     
     i = list_is_tail(list_head(&list));
-    fprintf(stdout, "Testing list_is_tail... value=%d (1=OK)\n", i);
+    fprintf(stdout, "Testing list_is_tail... value=%d (1=OK)\n", i);*/
     
     // Destroying the list
     fprintf(stdout, "\nDestroying the list\n");

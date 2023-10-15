@@ -4,8 +4,9 @@
 #include "dlist.h"
 
 /*
-	Print list
+	Imprime la lisa
 */
+
 static void print_dlist (const DList *dlist) {
 	DListNode *node;
 	int *data, i;
@@ -21,7 +22,7 @@ static void print_dlist (const DList *dlist) {
 		fprintf(stdout, "Dlist_node[%03d]=%03d, %p -> %p -> %p \n", i,*data, node->prev, node, node->next);
 		
 		i++;
-		if (dlist_is_tail (node))
+		if (dlist_is_tail(node))
 			break;
 		else
 			node =dlist_next(node);
@@ -32,6 +33,9 @@ static void print_dlist (const DList *dlist) {
 /*
 	Programa principal
 */
+
+
+
 int main (int argc, char **argv){
 	DList dlist;
 	DListNode *node;
@@ -39,14 +43,16 @@ int main (int argc, char **argv){
 	int *data, i;
 
 	//Incializando la lista doble mente ligada
-	dlist_init (&dlist, free);
+	dlist_init(&dlist, free);
 
 	//LLenando la lista doblemente ligada
 	node = dlist_head(&dlist);
 	for (i = 30; i > 20; i--) {
 
-		if ((data=(int *)malloc(sizeof(int))) == NULL)
+		if ((data=(int *)malloc(sizeof(int))) == NULL){
+			fprintf(stdout, "1");
 			return 1;
+		}
 
 		*data = i;
 
@@ -55,7 +61,7 @@ int main (int argc, char **argv){
 	}
 
 	print_dlist(&dlist);
-
+/*
 	//iniciando a navegar por la lista doblemente ligada
 	node= dlist_head(&dlist);
 
@@ -66,7 +72,7 @@ int main (int argc, char **argv){
 	//fprintf (stdout)
 
 
-
+*/
 
 	// Destruyendo la lista doblemente ligada
     fprintf(stdout, "\nDestroying the list\n");
